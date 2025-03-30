@@ -123,9 +123,30 @@ To get back to your base (ant free!) conda environment, you can run
 ```bash
 conda deactivate ant-ml
 ```
----
 
+## 🛠️ Troubleshooting
 
+If you're having trouble running `setup.sh` or `runme.sh`, try this instead:
+
+```bash
+zsh setup.sh
+```
+or
+```bash
+zsh runme.sh
+```
+
+This tells your computer to use the Zsh shell to run the script directly.
+
+Also, make sure you're in the correct folder when running these commands. You should be inside the main `ant_ml` folder. You can check by running:
+
+```bash
+pwd
+```
+
+and making sure the last part of the path says `ant_ml`.
+
+And please reach out to an ant-ml developer if you have any questions!
 
 
 ---

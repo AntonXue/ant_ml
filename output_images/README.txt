@@ -1,0 +1,1 @@
+When you run runme.sh, all the images in input_images will get copied over here- with the Ant annotations added in!

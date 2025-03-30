@@ -6,12 +6,18 @@ import supervision as sv
 import cv2
 from tqdm import tqdm
 
-
+VALID_IMAGE_EXTENSIONS = {'.jpg', '.jpeg', '.png', '.bmp', '.tiff', '.tif', '.gif'}
 model = load_model("GroundingDINO/groundingdino/config/GroundingDINO_SwinT_OGC.py", "GroundingDINO/weights/groundingdino_swint_ogc.pth")
 
 
 def segment_ants(input_folder, output_folder, text_prompt, box_threshold, text_threshold, device="cpu"):
     for image_path in tqdm(sorted(os.listdir(input_folder))):
+
+        ext = os.path.splitext(image_path)[1].lower()
+        if ext not in VALID_IMAGE_EXTENSIONS:
+            if "README" not in str(image_path).lower():
+                print(f"Ignoring file {str(image_path)} because it does not have a valid extension (e.g. .jpg, .jpeg, .png)")
+            continue  # Skip non-image files
         image_raw, image_pt = load_image(os.path.join(input_folder, image_path))
         boxes, logits, phrases = predict(
             model=model,

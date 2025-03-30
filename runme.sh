@@ -1,4 +1,4 @@
-!
+#!/bin/zsh
 echo "👋 We're going to run ant-ml!"
 
 

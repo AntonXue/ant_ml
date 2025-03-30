@@ -47,7 +47,7 @@ echo "✅ Conda environment 'ant-ml' is active."
 
 # Install PyTorch (CPU only)
 echo "📦 Installing PyTorch (CPU-only)..."
-pip install torch==2.6.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
 
 # Install other Python packages
 echo "📦 Installing supporting packages..."
